@@ -28,7 +28,7 @@ Git installieren
 
 Das Script `setupforgeops.sh` laufen lassen.
 
-###
+### Minikube ip/name verlinken
 
 Run the minikube ip command to get the Minikube ingress controller’s IP address:
 
@@ -39,11 +39,42 @@ Add an entry similar to the following to the /etc/hosts file:
 
     minikube-ip-address my-namespace.iam.example.
 
+### Docker Repo
+
+Set Up Your Local Computer to Use Minikube’s Docker Engine
+Run the docker-env command in your shell:
+
+    $ eval $(minikube docker-env)
+    $ skaffold config set --kube-context minikube local-cluster true
+
 ### Sourcen von forgeops clonen
 
     $ git clone https://github.com/ForgeRock/forgeops.git
     $ cd forgeops
     $ git checkout tags/2020.08.07-ZucchiniRicotta.1 -b my-branch
+
+### Deploy the ForgeRock Identity Platform
+
+Change the deployment namespace for the all environment from the default namespace to your namespace:
+
+Change to the directory containing the all environment:
+
+    $ cd /path/to/forgeops/kustomize/overlay/7.0/all
+    $ vi kustomization.yaml file.
+
+Modify two lines in the file so that the platform is deployed in your namespace:
+
+| Original Text        | Revised Text | 
+| ------------- | ------------- |
+| namespace: default | namespace: my-namespace |
+| FQDN: "default.iam.example.com" | FQDN: "my-namespace.iam.example.com" |
+
+Save the updated kustomization.yaml file.
+
+Initialize the staging area for configuration profiles with the canonical CDK configuration profile for the ForgeRock Identity Platform:
+
+    $ cd /path/to/forgeops/bin
+    $ ./config.sh init --profile cdk --version 7.0
 
 ## amster Dockerfile
 

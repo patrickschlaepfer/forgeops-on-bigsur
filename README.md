@@ -121,11 +121,26 @@ Obtain the amadmin user’s password:
 
 Open a new window or tab in a web browser.
 
-Go to https://my-namespace.iam.example.com/platform.
+Go to https://my-namespace.iam.example.com/platform
 
 The Kubernetes ingress controller handles the request, routing it to the login-ui pod.
 
 The login UI prompts you to log in.
 
-Log in as the amadmin user.
+Log in as the `amadmin` user.
 
+### Shut Down and Remove a ForgeRock Identity Platform Deployment
+
+Go to the terminal window where you started Skaffold.
+
+Run the 
+
+    $ skaffold delete
+    
+command to shut down your deployment and remove it from your namespace.
+
+Delete DS persistent volume claims (PVCs) from your namespace:
+
+    $ kubectl delete pvc --all
+    persistentvolumeclaim "data-ds-cts-0" deleted
+    persistentvolumeclaim "data-ds-idrepo-0" deleted

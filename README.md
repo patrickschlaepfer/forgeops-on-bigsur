@@ -105,6 +105,8 @@ ENTRYPOINT [ "/opt/amster/docker-entrypoint.sh" ]
 Nun kann mit `k9s` das Deployment überwacht werden. mit dem 
 Kommando `ns:` in `my-namespace` wechseln.
 
+![alt text](https://github.com/patrickschlaepfer/forgeops-on-bigsur/images/k9s.png "k9s Konsole")
+
 Es braucht etwas Zeit für das Deployment
 
     - my-namespace:deployment/am is ready.

@@ -1,17 +1,3 @@
-# Setup Mac
-
-## Installieren von `homebrew` und Tools
-
-    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    $ brew install git
-    $ brew install --cask vscodium
-
-## Git config
-
-    $ git config --global user.name "Max Muster"
-    $ git config --global user.email max@muster.com
-    $ git config --global github.user maxmuster
-
 # Forgeops on Big Sur
 
 Kleine Anleitung zur Installation von `forgeops` auf
@@ -29,6 +15,10 @@ https://appletoolbox.com/cant-enter-your-password-in-macos-big-sur-heres-how-to-
 Homebrew installieren
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+VSCodium installieren
+
+    $ brew install --cask vscodium
 
 Git installieren
 
@@ -48,8 +38,6 @@ Run the minikube ip command to get the Minikube ingress controller’s IP addres
 Add an entry similar to the following to the /etc/hosts file:
 
     nminikube-ip-address my-namespace.iam.example.
-
-
 
 ### Sourcen von forgeops clonen
 

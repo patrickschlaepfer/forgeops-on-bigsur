@@ -37,7 +37,7 @@ Run the minikube ip command to get the Minikube ingress controller’s IP addres
 
 Add an entry similar to the following to the /etc/hosts file:
 
-    nminikube-ip-address my-namespace.iam.example.
+    minikube-ip-address my-namespace.iam.example.
 
 ### Sourcen von forgeops clonen
 

@@ -26,6 +26,10 @@ Git installieren
     $ git config --global user.name "Patrick Schlaepfer"
     $ git config --global user.email patrick@schlaepfer.com
 
+### iTerm2 und oh-my-zsh
+
+https://www.mokkapps.de/blog/boost-your-productivity-by-using-the-terminal-iterm-and-zsh/
+
 Das Script `setupforgeops.sh` laufen lassen.
 
 ### Minikube ip/name verlinken

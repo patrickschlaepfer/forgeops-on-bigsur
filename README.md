@@ -133,6 +133,12 @@ The login UI prompts you to log in.
 
 Log in as the `amadmin` user.
 
+## Shutdown and Remove
+
+### Shutdown k8s
+
+    $ ./stop.sh
+
 ### Shut Down and Remove a ForgeRock Identity Platform Deployment
 
 Go to the terminal window where you started Skaffold.

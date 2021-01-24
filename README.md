@@ -133,6 +133,16 @@ The login UI prompts you to log in.
 
 Log in as the `amadmin` user.
 
+### Installation von ansible
+
+Erstellen eines venv hilft.
+
+    $ brew install python3
+    $ pip3 install virtualenv --user
+    $ virtualenv -p python3 /Users/patrick/venvs/ansible
+    $ source /Users/patrick/venvs/ansible/bin/activate
+    $ pip3 install ansible
+
 ## Shutdown and Remove
 
 ### Shutdown k8s

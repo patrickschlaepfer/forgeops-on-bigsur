@@ -1,0 +1,4 @@
+forgerock:
+  hosts:
+    my-namespace.iam.example.com:
+        

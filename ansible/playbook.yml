@@ -1,0 +1,21 @@
+---
+- hosts: forgerock
+  connection: local
+
+  tasks:
+    - name: Install Homebrew Cask prerequisites
+      community.general.homebrew_cask:
+        name: "{{ brew_cask_packages }}"
+        state: present
+      register: result
+      until: result is successful
+      when: homebrew_check.stat.exists
+    
+    - name: Install Homebrew prerequisites
+      community.general.homebrew:
+        name: "{{ brew_packages }}"
+        state: present
+      register: result
+      until: result is successful
+      when: homebrew_check.stat.exists
+    

@@ -1,0 +1,13 @@
+---
+ansible_python_interpreter: /Users/patrick/venvs/ansible/bin/python3
+brew_cask_packages:
+  - docker
+  - virtualbox
+  - vscodium
+brew_packages:
+  - kubernetes-cli
+  - skaffold
+  - kustomize
+  - kubectx
+  - minikube
+  - git

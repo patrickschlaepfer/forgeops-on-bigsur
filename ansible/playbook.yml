@@ -18,4 +18,29 @@
       register: result
       until: result is successful
       when: homebrew_check.stat.exists
+
+    - name: Check Minikube's status.
+      command: minikube status
+      register: minikube_status
+      changed_when: false
+      ignore_errors: true
+      
+    - name: Start Minikube if it's not running.
+      command: minikube start --memory=12288 --cpus=3 --disk-size=40g --vm-driver=virtualbox --bootstrapper kubeadm --kubernetes-version=1.17.4
+      when: "not minikube_status.stdout or 'Running' not in minikube_status.stdout"
+
+    - name: Enable ingress on minikube
+      command: minikube addons enable ingress
+
+    - name: Enable Locale Docker Registry
+      command: minikube ssh sudo ip link set docker0 promisc on
+
+    - name: Create namespace
+      community.kubernetes.k8s_exec:
+        command: create
+        namespace: my-namespace
+
+
+# Namespace wechseln
+kubens my-namespace
     
